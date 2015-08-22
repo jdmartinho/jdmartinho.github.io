@@ -1,5 +1,5 @@
 title=How To Create a Blog Using GitHub Pages and JBake
-date=2015-08-23
+date=2015-08-22
 type=post
 tags=blog,jbake,github,git,pages,how to
 status=published
