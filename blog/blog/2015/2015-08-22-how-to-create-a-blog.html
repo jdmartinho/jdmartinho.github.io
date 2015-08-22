@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>How To Create a Blog Using GitHub Pages and JBake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="generator" content="JBake">
+
+    <!-- Le styles -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/asciidoctor.css" rel="stylesheet">
+    <link href="../../css/base.css" rel="stylesheet">
+    <link href="../../css/prettify.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!--<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="../../favicon.ico">
+  </head>
+  <body onload="prettyPrint()">
+    <div id="wrap">
+	
+	<!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://jdmartinho.com">João Martinho</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../../index.html">Blog Home</a></li>            
+            <li><a href="../../feed.xml">Subscribe</a></li>            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">	
+	<div class="page-header">
+		<h1>How To Create a Blog Using GitHub Pages and JBake</h1>
+	</div>
+
+	<p><em>23 August 2015</em></p>
+
+	<p><p>Recently I was looking into creating a blog in order to write down some thoughts. In looking for simple ways to create one, but being a bit more technical than the average user, I started by discarding <a href="https://www.blogger.com">Blogger</a>, <a href="https://wordpress.com/">Wordpress</a>, <a href="https://medium.com/">Medium</a> and the like. I wanted to keep content under my control (let's pretend for a second that GitHub is under my control) and still have a workflow that allows me to write, save and publish with simplicity and flexibility. </p><p>As a software engineer, a very simple solution that I found is using Git, which I already use on a daily basis for development work. </p><p>So without further ado let's get started with the details of what we need to get writing and publishing.</p><h4>GitHub Pages setup</h4><p>The first step is creating a regular <a href="https://github.com/">GitHub</a> account. There is nothing fancy here and I will not go into any details on how to do this, although it should be pretty straightforward.</p><p>Once you have your repository created you should install <a href="https://git-scm.com/">Git</a> locally in your machine. It's worth mentioning that the repository name must obey the rule <strong><em>username</em>.github.io</strong> where <em>username</em> is your username on GitHub. </p><p>After you have Git locally set up you can clone the repository by copying the clone URL of your repository GitHub page and using it on your terminal.</p><p><code>$ git clone https://github.com/jdmartinho/jdmartinho.github.io.git</code></p><p>For user repositories <a href="https://pages.github.com/">GitHub Pages</a> requires that you put your site in the <code>master</code> branch. For project repositories, you should use the <code>gh-pages</code> branch. For the remainder of this article, we'll assume we're interested in creating a page for the user and so we'll use the <code>master</code> branch.</p><p>GitHub Pages will pick up whatever content you have in the <code>master</code> branch and it will serve it in the **<a href="http://username.github.io**">http://username.github.io**</a> URL. This means that if you just add a simple HTML document to your repository, you instantly get a page on that URL. Despite not being extremely interesting it's a start.</p><h4>Domain setup</h4><p>If you have a domain name bought and paid for you can use it to point to your new page with some more configuration steps that I'll explain now. </p><p>You'll need access to your hosting provider (e.g. GoDaddy) typically to your control panel like cPanel or a custom interface. Here you need to add a CNAME or A record, depending on your goal.</p><p>The first step is creating a file called <code>CNAME</code> and adding it to the root of our repository. On this file, the only thing we need to add is the domain name we'll be using to access this site, for instance <code>jdmartinho.com</code>. </p><p>After having this file in place in the repository, we go to our hosting provider control panel and we look for the option to zone records or alias. Here we'll add a CNAME record with <code>jdmartinho.github.io</code> pointing to the subdomain that we want to use like <code>www.jdmartinho.com</code> or <code>blog.jdmartinho.com</code>. If we want to use the actual top level domain we'll need to add an <code>A</code> or <code>ALIAS</code> record for <code>jdmartinho.com</code> to <code>192.30.252.153</code> and another <code>A</code> record also for <code>jdmartinho.com</code> to <code>192.30.252.154</code>. These IP addresses belong to GitHub and are subject to change (they have changed in the past). Typically GitHub help will contain articles on the latest IP addresses that you should use so <a href="https://help.github.com/articles/my-custom-domain-isn-t-working/">check here for the latest news on this</a>.</p><p>You can quickly check that the domain is correctly set up by running the <a href="http://www.digwebinterface.com/">dig command online here</a>. You should see something like this:</p>
+<pre><code>www.jdmartinho.com.    14399    IN    CNAME    jdmartinho.com.
+jdmartinho.com.        14399    IN    A    192.30.252.153
+jdmartinho.com.        14399    IN    A    192.30.252.154
+</code></pre><h4>JBake setup</h4><p><a href="http://jbake.org/">JBake</a> is a great project that takes the <a href="http://jekyllrb.com/">Jekyll</a> static site generator and brings it to the JVM world via Java. JBake allows us to edit pages using HTML, Markdown or AsciiDoc, process these pages with templates defined using Freemarker, Groovy or Thymeleaf and style them using CSS frameworks such as Bootstrap or Foundation. </p><p>Jekyll is what GitHub Pages actually uses behind the scenes to serve the content that you are uploading to the repository. If you want to use Jekyll locally you'll have to install <a href="https://www.ruby-lang.org/en/">Ruby</a> and <a href="https://rubygems.org/">RubyGems</a>. In order to use JBake you'll just need <a href="https://java.com/en/download/">Java 6+</a> and since I'm quite lazy and I happen to use a Java/JVM environment on a daily basis I decided to give it a try.</p><p>We'll start by going to the <a href="http://jbake.org/">JBake</a> website and downloading the latest release. Unpack the zip to a location of your choice and add that location to your Path environment variable so that we can launch JBake from any location.</p><p>Now let's take a look at the structure of the site with JBake. I'm borrowing the structure from the official documentation to exemplify:</p>
+<pre><code>.
+|-- assets
+|   |-- favicon.gif
+|   |-- robots.txt
+|   |-- img
+|   |   |-- logo.png
+|   |-- js
+|   |   |-- custom.js
+|   |-- css
+|   |-- style.css
+|
+|-- content
+|   |-- about.html
+|   |-- 2013
+|   |-- 01
+|   |   |-- hello-world.html
+|   |-- 02
+|   |-- weekly-links-1.ad
+|   |-- weekly-links-2.md
+|
+|-- templates
+|   |-- index.ftl
+|   |-- page.ftl
+|   |-- post.ftl
+|   |-- feed.ftl
+|
+|-- jbake.properties
+</code></pre><p>On the <code>assets</code> directory, we have the typical static files that we'll need to load the pages, such as CSS, JavaScript and image files. Usually, we'll edit this folder once at the beginning and then let it be unless we're adding a new JavaScript library or editing our CSS in order to get a new look on the site.</p><p>On the <code>content</code> directory is where we will keep our data that will be used by JBake to craft the site. This is where we put our HTML, Markdown or AsciiDocs, which means this is where we'll spend most of the time after our initial setup. After all, the whole point of this is getting us to write more and spend less time fiddling with the process of publishing. </p><p>On the <code>templates</code> directory, we keep the template files to edit with the language of our choice. Below I have a simple example in Freemarker for the post page that comes with JBake.</p>
+<pre><code>&lt;#include &quot;header.ftl&quot;&gt;    
+    &lt;#include &quot;menu.ftl&quot;&gt;    
+    &lt;div class=&quot;page-header&quot;&gt;
+        &lt;h1&gt;&lt;#escape x as x?xml&gt;${content.title}&lt;/#escape&gt;&lt;/h1&gt;
+    &lt;/div&gt;
+    &lt;p&gt;&lt;em&gt;${content.date?string(&quot;dd MMMM yyyy&quot;)}&lt;/em&gt;&lt;/p&gt;
+    &lt;p&gt;${content.body}&lt;/p&gt;
+    &lt;hr /&gt;    
+&lt;#include &quot;footer.ftl&quot;&gt;
+</code></pre><p>We can easily create an example site by issuing the command</p><p><code>$jbake -i</code></p><p>It's very useful to run this command the first time as it will provide us with the structure that we can then adapt to our needs. Finally when we have some content and we are ready to generate the site we can do</p><p><code>$jbake -b . blog</code></p><p>This will generate the site from the root of the repository and put it into the <code>blog</code> directory. Bear in mind that the <code>blog</code> directory will be overwritten by this. An easy way to bypass having to issue this command to generate the site with the source and output directories is to configure the default in <code>jbake.properties</code> such as</p><p><code>destination.folder=blog</code></p><p>Having configured this, we can just do <code>$jbake -b</code> from our root directory.</p><h4>Workflow</h4><p>Now that we have the site structure in place a typical workflow for me goes like this:</p>
+<ul>
+  <li>Pull the latest code available because I'll use multiple laptops to work on. I'll do this with <code>$git pull origin master</code> or any other branch name that you might be working on.</li>
+  <li>Navigate to my content directory and create a new file for a new blog post. This usually takes the form of <code>year-month-day-post-name</code> and I'll usually write in Markdown which is starting to become ubiquitous.</li>
+  <li>Save the work on and commit it with <code>git commit -m &quot;My message.&quot;</code>.</li>
+  <li>If it's a work in progress then we have two choices: either I'll push the commit to a branch different than <code>master</code> and later when it's finished I'll merge that branch or I'll push it to <code>master</code> now but I'll keep the header options of the post as <code>status=draft</code>. In the latter, I'll then change the status to <code>status=published</code> when I'm done with the blog post so that JBake will pick it and publish it.</li>
+  <li>Run the <code>$jbake -b</code> command, pushing the content to the remote repository and see it published.</li>
+</ul><p>Here are the links for the official documentation. Go explore!</p><p>JBake Documentation - <a href="http://jbake.org/docs/">http://jbake.org/docs/</a></p><p>Freemarker Manual - <a href="http://freemarker.org/docs/index.html">http://freemarker.org/docs/index.html</a></p></p>
+
+	<hr />
+	
+		</div>
+		<div id="push"></div>
+    </div>
+    
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">&copy; 2015 | Mixed with <a href="http://getbootstrap.com/">Bootstrap v3.1.1</a> | Baked with <a href="http://jbake.org">JBake v2.4.0</a></p>
+      </div>
+    </div>
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../../js/jquery-1.11.1.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/prettify.js"></script>
+    <script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-49606669-1', 'auto');
+          ga('send', 'pageview');
+    </script>
+    
+  </body>
+</html>

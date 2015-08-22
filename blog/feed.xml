@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JBake</title>
+    <link>http://blog.jdmartinho.com</link>
+    <atom:link href="http://blog.jdmartinho.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>JBake Bootstrap Template</description>
+    <language>en-gb</language>
+    <pubDate>Sat, 22 Aug 2015 11:16:22 +0100</pubDate>
+    <lastBuildDate>Sat, 22 Aug 2015 11:16:22 +0100</lastBuildDate>
+
+    <item>
+      <title>How To Create a Blog Using GitHub Pages and JBake</title>
+      <link>http://blog.jdmartinho.com/blog/2015/2015-08-22-how-to-create-a-blog.html</link>
+      <pubDate>Sun, 23 Aug 2015 00:00:00 +0100</pubDate>
+      <guid isPermaLink="false">blog/2015/2015-08-22-how-to-create-a-blog.html</guid>
+      	<description>
+	&lt;p&gt;Recently I was looking into creating a blog in order to write down some thoughts. In looking for simple ways to create one, but being a bit more technical than the average user, I started by discarding &lt;a href=&quot;https://www.blogger.com&quot;&gt;Blogger&lt;/a&gt;, &lt;a href=&quot;https://wordpress.com/&quot;&gt;Wordpress&lt;/a&gt;, &lt;a href=&quot;https://medium.com/&quot;&gt;Medium&lt;/a&gt; and the like. I wanted to keep content under my control (let&apos;s pretend for a second that GitHub is under my control) and still have a workflow that allows me to write, save and publish with simplicity and flexibility. &lt;/p&gt;&lt;p&gt;As a software engineer, a very simple solution that I found is using Git, which I already use on a daily basis for development work. &lt;/p&gt;&lt;p&gt;So without further ado let&apos;s get started with the details of what we need to get writing and publishing.&lt;/p&gt;&lt;h4&gt;GitHub Pages setup&lt;/h4&gt;&lt;p&gt;The first step is creating a regular &lt;a href=&quot;https://github.com/&quot;&gt;GitHub&lt;/a&gt; account. There is nothing fancy here and I will not go into any details on how to do this, although it should be pretty straightforward.&lt;/p&gt;&lt;p&gt;Once you have your repository created you should install &lt;a href=&quot;https://git-scm.com/&quot;&gt;Git&lt;/a&gt; locally in your machine. It&apos;s worth mentioning that the repository name must obey the rule &lt;strong&gt;&lt;em&gt;username&lt;/em&gt;.github.io&lt;/strong&gt; where &lt;em&gt;username&lt;/em&gt; is your username on GitHub. &lt;/p&gt;&lt;p&gt;After you have Git locally set up you can clone the repository by copying the clone URL of your repository GitHub page and using it on your terminal.&lt;/p&gt;&lt;p&gt;&lt;code&gt;$ git clone https://github.com/jdmartinho/jdmartinho.github.io.git&lt;/code&gt;&lt;/p&gt;&lt;p&gt;For user repositories &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; requires that you put your site in the &lt;code&gt;master&lt;/code&gt; branch. For project repositories, you should use the &lt;code&gt;gh-pages&lt;/code&gt; branch. For the remainder of this article, we&apos;ll assume we&apos;re interested in creating a page for the user and so we&apos;ll use the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;&lt;p&gt;GitHub Pages will pick up whatever content you have in the &lt;code&gt;master&lt;/code&gt; branch and it will serve it in the **&lt;a href=&quot;http://username.github.io**&quot;&gt;http://username.github.io**&lt;/a&gt; URL. This means that if you just add a simple HTML document to your repository, you instantly get a page on that URL. Despite not being extremely interesting it&apos;s a start.&lt;/p&gt;&lt;h4&gt;Domain setup&lt;/h4&gt;&lt;p&gt;If you have a domain name bought and paid for you can use it to point to your new page with some more configuration steps that I&apos;ll explain now. &lt;/p&gt;&lt;p&gt;You&apos;ll need access to your hosting provider (e.g. GoDaddy) typically to your control panel like cPanel or a custom interface. Here you need to add a CNAME or A record, depending on your goal.&lt;/p&gt;&lt;p&gt;The first step is creating a file called &lt;code&gt;CNAME&lt;/code&gt; and adding it to the root of our repository. On this file, the only thing we need to add is the domain name we&apos;ll be using to access this site, for instance &lt;code&gt;jdmartinho.com&lt;/code&gt;. &lt;/p&gt;&lt;p&gt;After having this file in place in the repository, we go to our hosting provider control panel and we look for the option to zone records or alias. Here we&apos;ll add a CNAME record with &lt;code&gt;jdmartinho.github.io&lt;/code&gt; pointing to the subdomain that we want to use like &lt;code&gt;www.jdmartinho.com&lt;/code&gt; or &lt;code&gt;blog.jdmartinho.com&lt;/code&gt;. If we want to use the actual top level domain we&apos;ll need to add an &lt;code&gt;A&lt;/code&gt; or &lt;code&gt;ALIAS&lt;/code&gt; record for &lt;code&gt;jdmartinho.com&lt;/code&gt; to &lt;code&gt;192.30.252.153&lt;/code&gt; and another &lt;code&gt;A&lt;/code&gt; record also for &lt;code&gt;jdmartinho.com&lt;/code&gt; to &lt;code&gt;192.30.252.154&lt;/code&gt;. These IP addresses belong to GitHub and are subject to change (they have changed in the past). Typically GitHub help will contain articles on the latest IP addresses that you should use so &lt;a href=&quot;https://help.github.com/articles/my-custom-domain-isn-t-working/&quot;&gt;check here for the latest news on this&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;You can quickly check that the domain is correctly set up by running the &lt;a href=&quot;http://www.digwebinterface.com/&quot;&gt;dig command online here&lt;/a&gt;. You should see something like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;www.jdmartinho.com.    14399    IN    CNAME    jdmartinho.com.
+jdmartinho.com.        14399    IN    A    192.30.252.153
+jdmartinho.com.        14399    IN    A    192.30.252.154
+&lt;/code&gt;&lt;/pre&gt;&lt;h4&gt;JBake setup&lt;/h4&gt;&lt;p&gt;&lt;a href=&quot;http://jbake.org/&quot;&gt;JBake&lt;/a&gt; is a great project that takes the &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; static site generator and brings it to the JVM world via Java. JBake allows us to edit pages using HTML, Markdown or AsciiDoc, process these pages with templates defined using Freemarker, Groovy or Thymeleaf and style them using CSS frameworks such as Bootstrap or Foundation. &lt;/p&gt;&lt;p&gt;Jekyll is what GitHub Pages actually uses behind the scenes to serve the content that you are uploading to the repository. If you want to use Jekyll locally you&apos;ll have to install &lt;a href=&quot;https://www.ruby-lang.org/en/&quot;&gt;Ruby&lt;/a&gt; and &lt;a href=&quot;https://rubygems.org/&quot;&gt;RubyGems&lt;/a&gt;. In order to use JBake you&apos;ll just need &lt;a href=&quot;https://java.com/en/download/&quot;&gt;Java 6+&lt;/a&gt; and since I&apos;m quite lazy and I happen to use a Java/JVM environment on a daily basis I decided to give it a try.&lt;/p&gt;&lt;p&gt;We&apos;ll start by going to the &lt;a href=&quot;http://jbake.org/&quot;&gt;JBake&lt;/a&gt; website and downloading the latest release. Unpack the zip to a location of your choice and add that location to your Path environment variable so that we can launch JBake from any location.&lt;/p&gt;&lt;p&gt;Now let&apos;s take a look at the structure of the site with JBake. I&apos;m borrowing the structure from the official documentation to exemplify:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;.
+|-- assets
+|   |-- favicon.gif
+|   |-- robots.txt
+|   |-- img
+|   |   |-- logo.png
+|   |-- js
+|   |   |-- custom.js
+|   |-- css
+|   |-- style.css
+|
+|-- content
+|   |-- about.html
+|   |-- 2013
+|   |-- 01
+|   |   |-- hello-world.html
+|   |-- 02
+|   |-- weekly-links-1.ad
+|   |-- weekly-links-2.md
+|
+|-- templates
+|   |-- index.ftl
+|   |-- page.ftl
+|   |-- post.ftl
+|   |-- feed.ftl
+|
+|-- jbake.properties
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;On the &lt;code&gt;assets&lt;/code&gt; directory, we have the typical static files that we&apos;ll need to load the pages, such as CSS, JavaScript and image files. Usually, we&apos;ll edit this folder once at the beginning and then let it be unless we&apos;re adding a new JavaScript library or editing our CSS in order to get a new look on the site.&lt;/p&gt;&lt;p&gt;On the &lt;code&gt;content&lt;/code&gt; directory is where we will keep our data that will be used by JBake to craft the site. This is where we put our HTML, Markdown or AsciiDocs, which means this is where we&apos;ll spend most of the time after our initial setup. After all, the whole point of this is getting us to write more and spend less time fiddling with the process of publishing. &lt;/p&gt;&lt;p&gt;On the &lt;code&gt;templates&lt;/code&gt; directory, we keep the template files to edit with the language of our choice. Below I have a simple example in Freemarker for the post page that comes with JBake.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;#include &amp;quot;header.ftl&amp;quot;&amp;gt;    
+    &amp;lt;#include &amp;quot;menu.ftl&amp;quot;&amp;gt;    
+    &amp;lt;div class=&amp;quot;page-header&amp;quot;&amp;gt;
+        &amp;lt;h1&amp;gt;&amp;lt;#escape x as x?xml&amp;gt;${content.title}&amp;lt;/#escape&amp;gt;&amp;lt;/h1&amp;gt;
+    &amp;lt;/div&amp;gt;
+    &amp;lt;p&amp;gt;&amp;lt;em&amp;gt;${content.date?string(&amp;quot;dd MMMM yyyy&amp;quot;)}&amp;lt;/em&amp;gt;&amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;${content.body}&amp;lt;/p&amp;gt;
+    &amp;lt;hr /&amp;gt;    
+&amp;lt;#include &amp;quot;footer.ftl&amp;quot;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;We can easily create an example site by issuing the command&lt;/p&gt;&lt;p&gt;&lt;code&gt;$jbake -i&lt;/code&gt;&lt;/p&gt;&lt;p&gt;It&apos;s very useful to run this command the first time as it will provide us with the structure that we can then adapt to our needs. Finally when we have some content and we are ready to generate the site we can do&lt;/p&gt;&lt;p&gt;&lt;code&gt;$jbake -b . blog&lt;/code&gt;&lt;/p&gt;&lt;p&gt;This will generate the site from the root of the repository and put it into the &lt;code&gt;blog&lt;/code&gt; directory. Bear in mind that the &lt;code&gt;blog&lt;/code&gt; directory will be overwritten by this. An easy way to bypass having to issue this command to generate the site with the source and output directories is to configure the default in &lt;code&gt;jbake.properties&lt;/code&gt; such as&lt;/p&gt;&lt;p&gt;&lt;code&gt;destination.folder=blog&lt;/code&gt;&lt;/p&gt;&lt;p&gt;Having configured this, we can just do &lt;code&gt;$jbake -b&lt;/code&gt; from our root directory.&lt;/p&gt;&lt;h4&gt;Workflow&lt;/h4&gt;&lt;p&gt;Now that we have the site structure in place a typical workflow for me goes like this:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Pull the latest code available because I&apos;ll use multiple laptops to work on. I&apos;ll do this with &lt;code&gt;$git pull origin master&lt;/code&gt; or any other branch name that you might be working on.&lt;/li&gt;
+  &lt;li&gt;Navigate to my content directory and create a new file for a new blog post. This usually takes the form of &lt;code&gt;year-month-day-post-name&lt;/code&gt; and I&apos;ll usually write in Markdown which is starting to become ubiquitous.&lt;/li&gt;
+  &lt;li&gt;Save the work on and commit it with &lt;code&gt;git commit -m &amp;quot;My message.&amp;quot;&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;If it&apos;s a work in progress then we have two choices: either I&apos;ll push the commit to a branch different than &lt;code&gt;master&lt;/code&gt; and later when it&apos;s finished I&apos;ll merge that branch or I&apos;ll push it to &lt;code&gt;master&lt;/code&gt; now but I&apos;ll keep the header options of the post as &lt;code&gt;status=draft&lt;/code&gt;. In the latter, I&apos;ll then change the status to &lt;code&gt;status=published&lt;/code&gt; when I&apos;m done with the blog post so that JBake will pick it and publish it.&lt;/li&gt;
+  &lt;li&gt;Run the &lt;code&gt;$jbake -b&lt;/code&gt; command, pushing the content to the remote repository and see it published.&lt;/li&gt;
+&lt;/ul&gt;&lt;p&gt;Here are the links for the official documentation. Go explore!&lt;/p&gt;&lt;p&gt;JBake Documentation - &lt;a href=&quot;http://jbake.org/docs/&quot;&gt;http://jbake.org/docs/&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Freemarker Manual - &lt;a href=&quot;http://freemarker.org/docs/index.html&quot;&gt;http://freemarker.org/docs/index.html&lt;/a&gt;&lt;/p&gt;
+	</description>
+    </item>
+
+  </channel> 
+</rss>
