@@ -1,5 +1,6 @@
 baseURL = "http://jdmartinho.github.io"
 languageCode = 'en-us'
+defaultContentLanguage = "en-gb"
 title = 'João Martinho'
 theme = 'hugo-blog-awesome'
 
