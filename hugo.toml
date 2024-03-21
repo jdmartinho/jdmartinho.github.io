@@ -7,7 +7,7 @@ theme = 'hugo-blog-awesome'
 [params]
 toc = true
 goToTop = true
-description = "Some random thoughts that happened to be captured"
+description = "Some random thoughts that happen to be captured"
 mainSections = ['posts']
 sitename = "João's Notes"
 
@@ -15,7 +15,7 @@ sitename = "João's Notes"
 avatar = "avatar.jpg"
 intro = "João's Notes"
 name = "João Martinho"
-description = "Some random thoughts that happened to be captured"
+description = "Some random thoughts that happen to be captured"
 
 
 [[menu.main]]
