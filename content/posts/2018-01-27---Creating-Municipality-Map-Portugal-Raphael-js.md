@@ -90,7 +90,7 @@ border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 2px;
 
 And here’s the result
 
-![MapaPortugalInicial.png](../assets/MapaPortugalInicial.png)
+![MapaPortugalInicial.png](../../MapaPortugalInicial.png)
 *Portugal Council Map using Raphael.js*
 
 ###### Step 4 – Adding our tax information
@@ -214,7 +214,7 @@ for (var concelhoName in concelhosSVG) {
 
 After a few updates to our HTML file, we end up with the following map.
 
-![Final map with colours](../../assets/MapaPortugalFinalizado.png)
+![Final map with colours](../../MapaPortugalFinalizado.png)
 
 *Final map with colours*
 

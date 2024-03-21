@@ -27,13 +27,13 @@ I mounted my hard drive on Windows and could see all my folders. but when access
 
 Some folders were complaining that I didn’t have permission to access them. I matched all of these as folders that were created in macOS. This was a non-issue as I just had to give myself permission to access them by confirming the popup dialogue, just like in the image below.
 
-![permissiontocontinue.jpg](../../assets/permissiontocontinue.jpg)
+![permissiontocontinue.jpg](../../permissiontocontinue.jpg)
 
 *Make sure you just give yourself permission to access the folder*
 
 With the rest of the folders, I had a different issue though.
 
-![location-is-not-available-11.jpg](../../assets/location-is-not-available-11.jpg)
+![location-is-not-available-11.jpg](../../location-is-not-available-11.jpg)
 
 *Location not available*
 
