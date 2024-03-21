@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Boot on João Martinho</title>
+    <link>http://localhost:1313/tags/spring-boot/</link>
+    <description>Recent content in Spring Boot on João Martinho</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Apr 2018 10:48:07 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating Web Integration Tests for Spring Boot REST Controller</title>
+      <link>http://localhost:1313/posts/creating-web-integration-tests-for-spring-boot-rest-controller/</link>
+      <pubDate>Sun, 29 Apr 2018 10:48:07 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/creating-web-integration-tests-for-spring-boot-rest-controller/</guid>
+      
+      <description>I’ve been working on a simple REST API for a CRUD backend application using Spring Boot. Nothing revolutionary, but it’s simply a new way of writing less code that I haven’t tried before.
+Spring Boot is part of the Spring web application framework. The beauty of the Spring Boot project lies in using convention over configuration (similar to Ruby on Rails) to speed up development of web applications. It’s fast to run, you don’t need to worry about containers since the application has Tomcat embedded, and you can write a REST API in just a few lines of code with minimal configuration.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

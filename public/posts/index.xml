@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on João Martinho</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on João Martinho</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 10 Feb 2022 19:18:07 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Management Lessons From Hard Knocks</title>
+      <link>http://localhost:1313/posts/management-lessons-from-hard-knocks/</link>
+      <pubDate>Thu, 10 Feb 2022 19:18:07 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/management-lessons-from-hard-knocks/</guid>
+      
+      <description>It’s Super Bowl season and everyone is usually excited either for the big game or for the half-time show.
+While the Super Bowl is great I usually get excited with the NFL around August. Why August? Well, I suppose most people reserve their summer holidays for that period, so there’s that.
+Another thing that happens in August is the NFL preseason kicks in full swing. And while the anticipation is great, that’s not why I’m writing this.</description>
+      
+    </item>
+    
+    <item>
+      <title>Creating Web Integration Tests for Spring Boot REST Controller</title>
+      <link>http://localhost:1313/posts/creating-web-integration-tests-for-spring-boot-rest-controller/</link>
+      <pubDate>Sun, 29 Apr 2018 10:48:07 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/creating-web-integration-tests-for-spring-boot-rest-controller/</guid>
+      
+      <description>I’ve been working on a simple REST API for a CRUD backend application using Spring Boot. Nothing revolutionary, but it’s simply a new way of writing less code that I haven’t tried before.
+Spring Boot is part of the Spring web application framework. The beauty of the Spring Boot project lies in using convention over configuration (similar to Ruby on Rails) to speed up development of web applications. It’s fast to run, you don’t need to worry about containers since the application has Tomcat embedded, and you can write a REST API in just a few lines of code with minimal configuration.</description>
+      
+    </item>
+    
+    <item>
+      <title>United Colours of File Systems</title>
+      <link>http://localhost:1313/posts/united-colours-file-systems/</link>
+      <pubDate>Sun, 15 Apr 2018 13:10:56 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/united-colours-file-systems/</guid>
+      
+      <description>The Problem This weekend I needed to access some external hard drive folders on a Windows laptop. We follow a united colours approach to our systems at home, which, just like in the real world comes with a big set of advantages and occasional challenges. One of the downsides is the fact that each operating system uses different file systems.
+This hard drive, in particular, had folders that had been created in an Ubuntu Linux laptop and some that have been created in a macOS laptop.</description>
+      
+    </item>
+    
+    <item>
+      <title>Creating a Municipality Map of Portugal With Raphael.js</title>
+      <link>http://localhost:1313/posts/creating-municipality-map-portugal-raphael-js/</link>
+      <pubDate>Sat, 27 Jan 2018 12:15:48 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/creating-municipality-map-portugal-raphael-js/</guid>
+      
+      <description>Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a more lax treatment in possible crimes among them.</description>
+      
+    </item>
+    
+    <item>
+      <title>Compound Interest in Your Career: How to Use the Power of the Environment to Accelerate Your Professional Growth</title>
+      <link>http://localhost:1313/posts/compound-interest-in-your-career-how-use-the-power-of-the-environment-to-accelerate-your-professional-growth/</link>
+      <pubDate>Sun, 28 May 2017 11:36:15 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/compound-interest-in-your-career-how-use-the-power-of-the-environment-to-accelerate-your-professional-growth/</guid>
+      
+      <description>Over the last week I’ve been reading Judith Rich Harris’ The Nurture Assumption, where the author exposes the idea that children are not so much influenced by their parents as they are by their peers. Most examples Harris gives us during the book show that the environment in which children grow up is a lot more powerful in socializing them than their parents. Despite best intentions for getting children to behave in certain ways at home, the world outside and other children are the key to derive their social behaviors which might or might not impact their adult lives.</description>
+      
+    </item>
+    
+    <item>
+      <title>How to Create a Blog Using GitHub Pages and JBake</title>
+      <link>http://localhost:1313/posts/how-to-create-a-blog-using-github-pages-and-jbake/</link>
+      <pubDate>Sat, 22 Aug 2015 15:45:35 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-create-a-blog-using-github-pages-and-jbake/</guid>
+      
+      <description>Recently I was looking into creating a blog in order to write down some thoughts. In looking for simple ways to create one, but being a bit more technical than the average user, I started by discarding Blogger, WordPress, Medium and the like. I wanted to keep content under my control (let’s pretend for a second that GitHub is under my control) and still have a workflow that allows me to write, save and publish with simplicity and flexibility.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

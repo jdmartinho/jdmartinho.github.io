@@ -1,0 +1,58 @@
+baseURL = "https://jdmartinho.github.io/"
+languageCode = 'en-us'
+title = 'João Martinho'
+theme = 'hugo-blog-awesome'
+
+[params]
+toc = true
+goToTop = true
+description = "Some random thoughts that happened to be captured"
+mainSections = ['posts']
+sitename = "João's Notes"
+
+[params.author]
+avatar = "avatar.jpg"
+intro = "João's Notes"
+name = "João Martinho"
+description = "Some random thoughts that happened to be captured"
+
+
+[[menu.main]]
+name = 'Home'
+url = "/"
+weight = 10
+
+name = 'All Posts'
+url = "/posts"
+weight = 20
+
+# set markup.highlight.noClasses=false to enable code highlight
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
+	[markup.tableOfContents]
+		startLevel = 2 # ToC starts from H2
+		endLevel = 4 # ToC ends at H4
+		ordered = false # generates <ul> instead of <ol>
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/joaomartinho"
+
+[[params.socialIcons]]
+name = "managerreadme"
+url = "https://managerreadme.com/readme/jdmartinho"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/jdmartinho"
+
+[[params.socialIcons]]
+name = "stackshare"
+url = "https://stackshare.io/jdmartinho/my-stack"
+
+[[params.socialIcons]]
+name = "goodreads"
+url = "https://www.goodreads.com/jdmartinho"

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Creating a Municipality Map of Portugal With Raphael.js | João Martinho</title>
+<meta property="og:title" content="Creating a Municipality Map of Portugal With Raphael.js | João Martinho" />
+<meta name="twitter:title" content="Creating a Municipality Map of Portugal With Raphael.js | João Martinho" />
+<meta itemprop="name" content="Creating a Municipality Map of Portugal With Raphael.js | João Martinho" />
+<meta name="application-name" content="Creating a Municipality Map of Portugal With Raphael.js | João Martinho" />
+<meta property="og:site_name" content="João&#39;s Notes" />
+
+<meta name="description" content="Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a more lax treatment in possible crimes among them. Of course back then the risk of an Eastern invasion by a Spanish monarch was very much in the day-to-day thinking of our rulers. One can speculate that if in 2018 all the Portuguese people live by the coast is the East still Portugal? I suppose if enough Irish speakers moved there it could be claimed as part of Ireland! But I diverge.">
+<meta itemprop="description" content="Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a more lax treatment in possible crimes among them. Of course back then the risk of an Eastern invasion by a Spanish monarch was very much in the day-to-day thinking of our rulers. One can speculate that if in 2018 all the Portuguese people live by the coast is the East still Portugal? I suppose if enough Irish speakers moved there it could be claimed as part of Ireland! But I diverge." />
+<meta property="og:description" content="Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a more lax treatment in possible crimes among them. Of course back then the risk of an Eastern invasion by a Spanish monarch was very much in the day-to-day thinking of our rulers. One can speculate that if in 2018 all the Portuguese people live by the coast is the East still Portugal? I suppose if enough Irish speakers moved there it could be claimed as part of Ireland! But I diverge." />
+<meta name="twitter:description" content="Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a more lax treatment in possible crimes among them. Of course back then the risk of an Eastern invasion by a Spanish monarch was very much in the day-to-day thinking of our rulers. One can speculate that if in 2018 all the Portuguese people live by the coast is the East still Portugal? I suppose if enough Irish speakers moved there it could be claimed as part of Ireland! But I diverge." />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/creating-municipality-map-portugal-raphael-js/" title="" />
+
+
+
+  <meta itemprop="image" content="http://localhost:1313/" />
+  <meta property="og:image" content="http://localhost:1313/" />
+  <meta name="twitter:image" content="http://localhost:1313/" />
+  <meta name="twitter:image:src" content="http://localhost:1313/" />
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2018-01-27T12:15:48Z />
+    <meta property="article:published_time" content=2018-01-27T12:15:48Z />
+
+    
+
+    
+    <meta name="news_keywords" content="83" />
+    <meta property="article:section" content="83" />
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Creating a Municipality Map of Portugal With Raphael.js",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2018-01-27",
+        "description": "Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a more lax treatment in possible crimes among them. Of course back then the risk of an Eastern invasion by a Spanish monarch was very much in the day-to-day thinking of our rulers. One can speculate that if in 2018 all the Portuguese people live by the coast is the East still Portugal? I suppose if enough Irish speakers moved there it could be claimed as part of Ireland! But I diverge.",
+        "wordCount":  1570 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2018-01-27",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "João Martinho"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.124.0">
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/creating-municipality-map-portugal-raphael-js/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/posts">
+                        All Posts
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Creating a Municipality Map of Portugal With Raphael.js</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2018-01-27T12:15:48&#43;00:00" itemprop="datePublished"> Jan 27, 2018 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b></b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <p>Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a <a href="http://repositorio.ul.pt/bitstream/10451/10602/1/ulsd067625_td_vol_1.pdf">more lax treatment in possible crimes among them</a>. Of course back then the risk of an Eastern invasion by a Spanish monarch was very much in the day-to-day thinking of our rulers. One can speculate that if in 2018 all the Portuguese people live by the coast is the East still Portugal? I suppose if enough Irish speakers moved there it could be claimed as part of Ireland! But I diverge.</p>
+<p>Coming from one of the poorest regions of Portugal myself, I wondered if the “right” places were the ones indeed taking advantage of this measure and trying to attract people to live there. After a bit of research, I found that my local town didn’t use this measure but some neighbouring places did. I searched for a map so that I could visualize where this was happening and by how much (municipalities can give back up to 5% of the tax to the be collected). I didn’t find any so I thought I would create one.</p>
+<h6 id="github-projecthttpsgithubcomjdmartinhoconcelhosportugal"><a href="https://github.com/jdmartinho/concelhosPortugal">GitHub project</a></h6>
+<h6 id="step-1--creating-a-municipality-map-in-svg">Step 1 – Creating a municipality map in svg</h6>
+<p>This was more of a search operation than a creative one. I needed an SVG map that I could manipulate in something like JavaScript in order to load some data dynamically, such as the tax information for each council. I found one <a href="https://upload.wikimedia.org/wikipedia/commons/5/59/Concelhos-sede_de_ONGAs.svg">map</a> on Wikipedia under a Creative Commons license that I could change for my purpose since it contained some errors and missed some information such as three councils. This map is not perfect because it’s missing the 30 councils that make up the archipelagos of Madeira and Açores and instead just represents the archipelago as a whole. For the purpose of this exercise, it will suffice.</p>
+<h6 id="step-2--creating-a-javascript-map-with-raphaeljs">Step 2 – Creating a Javascript map with Raphael.js</h6>
+<p>In order to create an interactive map, I used <a href="http://dmitrybaranovskiy.github.io/raphael/">Raphael</a>, a JavaScript library that allows using vector maps as JavaScript objects. Armed with the SVG data and with a way to create objects from it I started by following an <a href="https://www.jonathan-petitcolas.com/2013/07/18/create-clickable-svg-france-regions-map.html">online tutorial</a> that taught me with a quick way to create a map. The hardest part was actually mapping (no pun intended) the vector data to the correct councils in an array. The SVG map didn’t have the right names, sometimes, and also didn’t have all of the councils. This left me with the time-consuming option of manually copying the data into the array.</p>
+<p>After some time I had a map that correctly represented all of the councils with names and real borders. In order to use this in JavaScript I created a file, <span class="lang:default decode:true crayon-inline ">concelhosSVG.js</span> , and I created the following:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">MAP_WIDTH</span> <span class="o">=</span> <span class="mi">280</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">MAP_HEIGHT</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// The RaphaelJS container
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">mapContainer</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&#34;map&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Raphael</span><span class="p">(</span><span class="nx">mapContainer</span><span class="p">,</span> <span class="nx">MAP_WIDTH</span><span class="p">,</span> <span class="nx">MAP_HEIGHT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// The SVG council map
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">concelhosSVG</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span></code></pre></div><p>The <span class="lang:default decode:true crayon-inline ">MAP_WIDTH</span> and <span class="lang:default decode:true crayon-inline ">MAP_HEIGHT</span> variables allow us to define a size to work with. The <span class="lang:default decode:true crayon-inline ">mapContainer</span> variable will be used in the map div in our HTML file to display the actual map. The <span class="lang:default decode:true crayon-inline ">map</span> variable represents the Raphael object on which we will make our manipulations.</p>
+<p>Finally, we define concelhosSVG which will hold an index with the name of the council and the path to append to our map variable.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">concelhosSVG</span><span class="p">[</span><span class="s2">&#34;Fundão&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">map</span><span class="p">.</span><span class="nx">path</span><span class="p">(</span><span class="s2">&#34;M 167.3315,144.27869 C 167.70634,143.45051 168.59824,144.40767 169.14128,143.96837 C 170.04712,144.58579 169.74261,143.61898 170.14549,143.24669 C 170.19026,143.8941 171.48098,143.92645 170.77216,143.24669 C 171.7888,143.31162 171.57197,141.49447 172.47416,142.28702 C 173.57466,141.60941 174.41483,142.86308 175.35703,142.61515 C 175.85449,142.06864 176.97441,141.43587 175.91717,140.99683 C 175.57029,139.99269 176.521,140.41021 177.00342,139.88409 C 178.53179,140.47533 179.14516,137.86824 180.52746,138.41114 C 181.56565,138.72827 182.88419,138.32989 183.93938,137.9271 C 185.12315,137.51048 186.49848,136.95014 187.46332,136.36056 C 188.04225,135.81438 189.21995,136.4105 189.86007,135.57825 C 190.4739,135.08423 190.92441,133.57199 192.03263,134.6014 C 192.52687,135.49456 192.33874,136.70338 192.60983,137.65136 C 192.36431,138.07569 191.94744,138.82352 192.92483,138.55668 C 194.26427,139.59397 191.53492,139.8331 191.80033,140.96561 C 190.71887,141.91361 191.40166,143.06556 191.5595,144.21539 C 191.56461,145.35123 190.37212,145.79036 190.25594,146.9015 C 190.05731,147.941 190.24724,149.38566 189.06964,149.89241 C 188.27628,150.66492 187.62897,151.49838 187.97416,152.73502 C 187.62442,153.47357 188.03326,155.42372 186.73033,154.38635 C 186.03375,153.77036 186.80574,152.11174 185.47275,151.96231 C 184.79746,150.89014 184.1507,153.04428 183.06861,152.60391 C 182.63624,153.02114 181.38972,154.65807 181.18383,153.60402 C 180.45187,152.64585 181.01028,151.46204 180.37774,150.52502 C 180.85331,149.1982 179.32814,148.20144 178.51965,147.70794 C 177.17502,148.31606 175.72313,147.96607 174.39348,147.55634 C 173.14133,147.64186 171.59647,148.13699 170.94954,149.3765 C 170.48481,150.40525 169.43809,150.84564 168.81686,151.71371 C 168.27551,152.15799 167.19592,151.16589 167.16849,152.28234 C 166.2034,151.94219 165.44106,150.78202 164.26049,151.44934 C 163.4227,151.00082 164.19152,150.33669 164.16856,149.96596 C 163.11965,149.78199 165.069,149.00581 163.94549,148.53402 C 164.37317,148.23278 164.73086,147.75984 163.92612,148.04423 C 162.6652,148.29997 164.33313,147.68991 164.44182,147.24835 C 165.42752,147.08441 164.55667,148.461 165.60911,148.74006 C 165.66373,148.24142 166.92474,147.46 167.41097,146.80788 C 166.14368,146.18786 168.36781,146.41623 167.84178,145.44997 C 168.00251,144.95679 167.60272,144.62105 167.3315,144.27869 z &#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p>In Raphael we can use the <a href="http://dmitrybaranovskiy.github.io/raphael/reference.html#Paper.path">SVG path syntax</a> which basically allows us to start with an <span class="lang:default decode:true crayon-inline ">M</span> (move to) and add coordinates until we issue a <span class="lang:default decode:true crayon-inline ">Z</span> for ending the path.</p>
+<h6 id="step-3--adding-our-map-to-html">Step 3 – Adding our map to html</h6>
+<p>Now that we have a map we can create a simple HTML page to include the map.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Portugal councils with Raphael.js<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;css/style.css&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;map&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/raphael.min.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;js/concelhosSVG.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>I’ve gone ahead and added a simple style to our CSS file</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="c">/* basic positioning */</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">legend</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">list-style</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">legend</span> <span class="nt">li</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">margin-right</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">.</span><span class="nc">legend</span> <span class="nt">span</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">border</span><span class="p">:</span> <span class="mi">1</span><span class="kt">px</span> <span class="kc">solid</span> <span class="mh">#ccc</span><span class="p">;</span> <span class="k">float</span><span class="p">:</span> <span class="kc">left</span><span class="p">;</span> <span class="k">width</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span> <span class="k">height</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">2</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>And here’s the result</p>
+<p><img src="../assets/MapaPortugalInicial.png" alt="MapaPortugalInicial.png">
+<em>Portugal Council Map using Raphael.js</em></p>
+<h6 id="step-4--adding-our-tax-information">Step 4 – Adding our tax information</h6>
+<p>Now that we have a map, albeit a very ugly one, let’s add our tax information. This information is public and you can get it from the <a href="https://www.portaldasfinancas.gov.pt/pt/consultarTaxasIRSMunicipiosForm.action">Portuguese Revenue website</a>.</p>
+<p>We’ll create a new JavaScript file called <span class="lang:default decode:true crayon-inline ">concelhosIRS.js</span> and we’ll create an array inside it with all the information needed.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// The Tax Benefit for each council for 2018
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">var</span> <span class="nx">concelhosIRS</span> <span class="o">=</span> <span class="p">{};</span>
+</span></span><span class="line"><span class="cl"><span class="nx">concelhosIRS</span><span class="p">[</span><span class="s2">&#34;Abrantes&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.005</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">concelhosIRS</span><span class="p">[</span><span class="s2">&#34;Águeda&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">concelhosIRS</span><span class="p">[</span><span class="s2">&#34;Aguiar Da Beira&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">concelhosIRS</span><span class="p">[</span><span class="s2">&#34;Alandroal&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">concelhosIRS</span><span class="p">[</span><span class="s2">&#34;Albergaria-A-Velha&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0225</span><span class="p">;</span>
+</span></span></code></pre></div><h6 id="step-5--styling-our-map-with-the-tax-information">Step 5 – Styling our map with the tax information</h6>
+<p>Finally, we just need to syle our map based on this information. In order to do that we’ll create a new JavaScript file named <span class="lang:default decode:true crayon-inline ">main.js</span> and we’ll add the following code to it.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">Styles</span> <span class="nt">to</span> <span class="nt">apply</span>
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">Default</span> <span class="nt">style</span>
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">style</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#ddd&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">stroke</span><span class="o">:</span> <span class="s2">&#34;#aaa&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;stroke-width&#34;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;stroke-linejoin&#34;</span><span class="o">:</span> <span class="s2">&#34;round&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="k">cursor</span><span class="o">:</span> <span class="s2">&#34;pointer&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">Style</span> <span class="nt">when</span> <span class="nt">hovering</span>
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">hoverStyle</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#A8BED5&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="nt">Styles</span> <span class="nt">for</span> <span class="nt">tax</span> <span class="nt">brackets</span>
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">fivePercent</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#358205&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">overFourPercent</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#8FB822&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">overThreePercent</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#F3EE00&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">overTwoPercent</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#D76804&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">overOnePercent</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#C12818&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">overZeroPercent</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="n">fill</span><span class="p">:</span> <span class="s2">&#34;#801A0F&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">var</span> <span class="nt">animationSpeed</span> <span class="o">=</span> <span class="nt">500</span><span class="o">;</span>
+</span></span></code></pre></div><p>We’ll start by adding our initial style, our style when hovering the mouse over a council and the style for each of the tax brackets. I chose to create six tax brackets between 0% and 5%. The councils that don’t offer any tax benefit will not have a colour and will just show as grey.</p>
+<p>Next, we add a function to change the styling based on the tax benefit that the council provides.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Return style by tax bracket for provided council name using the concelhosIRS array
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">corConcelho</span><span class="p">(</span><span class="nx">nome</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.05</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">fivePercent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.04</span> <span class="o">&amp;&amp;</span> <span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">overFourPercent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.03</span> <span class="o">&amp;&amp;</span> <span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.04</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">overThreePercent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.02</span> <span class="o">&amp;&amp;</span> <span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.03</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">overTwoPercent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.01</span> <span class="o">&amp;&amp;</span> <span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.02</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">overOnePercent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">0.00</span> <span class="o">&amp;&amp;</span> <span class="nx">concelhosIRS</span><span class="p">[</span><span class="nx">nome</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">overZeroPercent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">style</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>And we wrap everything together by adding our main code that initialises the map colours and adds our event listeners for when we hover our mouse over a council and move out.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="c1">// Main loop
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Initializes the map with default styles
+</span></span></span><span class="line"><span class="cl"><span class="c1">// Adds event listeners for mouseover and mouseout to allow us to see which council we are selecting
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">concelhoName</span> <span class="k">in</span> <span class="nx">concelhosSVG</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">concelho</span><span class="p">,</span> <span class="nx">nome</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">concelho</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">style</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">concelho</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="nx">corConcelho</span><span class="p">(</span><span class="nx">nome</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">concelho</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;mouseover&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">concelho</span><span class="p">.</span><span class="nx">animate</span><span class="p">(</span><span class="nx">hoverStyle</span><span class="p">,</span> <span class="nx">animationSpeed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;popup&#39;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">&#39;block&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;popup&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">nome</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">concelho</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;mouseout&#34;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">concelho</span><span class="p">.</span><span class="nx">animate</span><span class="p">(</span><span class="nx">corConcelho</span><span class="p">(</span><span class="nx">nome</span><span class="p">),</span> <span class="nx">animationSpeed</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;popup&#39;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;popup&#39;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">})(</span><span class="k">this</span><span class="p">.</span><span class="nx">concelhosSVG</span><span class="p">[</span><span class="nx">concelhoName</span><span class="p">],</span> <span class="nx">concelhoName</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h6 id="final-result-and-notes">Final result and notes</h6>
+<p>After a few updates to our HTML file, we end up with the following map.</p>
+<p><img src="../../assets/MapaPortugalFinalizado.png" alt="Final map with colours"></p>
+<p><em>Final map with colours</em></p>
+<p>Much nicer right?</p>
+<p>You can find all the <a href="https://github.com/jdmartinho/concelhosPortugal">source code on GitHub</a> if you want to take a look or try it out for yourself.</p>
+<p>I’ll throw some additional notes just so you’re aware of them:</p>
+<ul>
+<li>I have not used councils for Azores and Madeira as I couldn’t find any usable SVG for them. I also suspect they would be tiny to select, as some councils in the continent already are. The tax data for them are mapped in concelhosIRS.js though.</li>
+<li>I have used global variables for the tax data and the Raphael map. I did this because it was a learning exercise for me around Raphael and SVG and not programming. Global variables are fine to use in very small projects such as this tutorial but you shouldn’t use them in any production code or larger collaborative projects. <a href="https://stackoverflow.com/questions/1841916/how-to-avoid-global-variables-in-javascript">Start here</a> and do your own research.</li>
+<li>A shout out to Andy Fitch who also has a <a href="https://parall.ax/blog/view/2985/tutorial-creating-an-interactive-svg-map">nice tutorial on this subject.</a></li>
+</ul>
+</body></html>
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://www.linkedin.com/in/joaomartinho" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+<a href="https://managerreadme.com/readme/jdmartinho" target="_blank" rel="noopener noreferrer me"
+    title="Managerreadme">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</a>
+<a href="https://github.com/jdmartinho" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://stackshare.io/jdmartinho/my-stack" target="_blank" rel="noopener noreferrer me"
+    title="Stackshare">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" stroke="currentColor">
+    <path d="M22.948 8.927c-0.047-0.364 0-0.791 0-0.791v-0.011c0.188-0.953 1.025-1.672 2.031-1.672 0.005 0 0.011 0 0.016 0h0.005c1.145 0 2.079 0.932 2.079 2.073 0 1.145-0.933 2.077-2.079 2.077-0.005 0-0.011-0.005-0.011-0.005h-0.011c-0.989 0-1.839-0.697-2.031-1.672zM32 2.052v27.896c0 1.135-0.86 2.052-1.921 2.052h-28.152c-1.063 0-1.927-0.917-1.927-2.052v-27.896c0-1.131 0.864-2.052 1.927-2.052h28.152c1.061 0 1.921 0.921 1.921 2.052zM28.927 23.396c0-2.183-1.765-3.948-3.948-3.948-1.755 0-3.301 1.156-3.791 2.844h-2.344l-3.656-6.297 0.005-0.005 3.645-6.276h2.333c0.609 2.093 2.801 3.297 4.896 2.688 2.093-0.609 3.301-2.803 2.687-4.896-0.609-2.093-2.801-3.297-4.895-2.688-1.297 0.376-2.313 1.391-2.688 2.688h-3.552l-0.036-0.021-4.303 7.401-0.036 0.057h-2.552c-0.611-2.093-2.808-3.297-4.901-2.688-2.095 0.609-3.297 2.803-2.688 4.896 0.609 2.095 2.803 3.303 4.896 2.693 1.297-0.38 2.312-1.396 2.693-2.693h2.613l4.277 7.36 0.020-0.011h3.584c0.489 1.688 2.036 2.844 3.791 2.844 2.183 0 3.948-1.765 3.948-3.948zM25.021 21.24c-0.995 0-1.844 0.697-2.037 1.672-0.005 0.036-0.005 0.072-0.011 0.109-0.004 0.025-0.020 0.041-0.025 0.061-0.052 0.401 0 0.803 0 0.803 0.235 1.125 1.328 1.844 2.453 1.615 0.76-0.156 1.339-0.735 1.552-1.453 0.083-0.229 0.135-0.473 0.135-0.735 0-1.145-0.927-2.072-2.067-2.072zM6.932 13.891c-1.14 0-2.072 0.927-2.072 2.073 0 0.009 0 0.015 0 0.025 0 0.005 0 0.005 0 0.011 0 1.14 0.927 2.063 2.061 2.063 0.724 0 1.355-0.369 1.724-0.927 0.229-0.333 0.365-0.735 0.365-1.167 0-1.152-0.932-2.079-2.079-2.079z"/>
+  </svg>
+</a>
+<a href="https://www.goodreads.com/jdmartinho" target="_blank" rel="noopener noreferrer me"
+    title="Goodreads">
+    <svg xmlns="http://www.w3.org/2000/svg" role="img" fill="currentColor" viewBox="0 0 24 24">
+    <path
+        d="M11.43 23.995c-3.608-.208-6.274-2.077-6.448-5.078.695.007 1.375-.013 2.07-.006.224 1.342 1.065 2.43 2.683 3.026 1.583.496 3.737.46 5.082-.174 1.351-.636 2.145-1.822 2.503-3.577.212-1.042.236-1.734.231-2.92l-.005-1.631h-.059c-1.245 2.564-3.315 3.53-5.59 3.475-5.74-.054-7.68-4.534-7.528-8.606.01-5.241 3.22-8.537 7.557-8.495 2.354-.14 4.605 1.362 5.554 3.37l.059.002.002-2.918 2.099.004-.002 15.717c-.193 7.04-4.376 7.89-8.209 7.811zm6.1-15.633c-.096-3.26-1.601-6.62-5.503-6.645-3.954-.017-5.625 3.592-5.604 6.85-.013 3.439 1.643 6.305 4.703 6.762 4.532.591 6.551-3.411 6.404-6.967z" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 João Martinho.
+        
+    </small>
+</footer><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

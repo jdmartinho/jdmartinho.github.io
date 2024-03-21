@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visualization on João Martinho</title>
+    <link>http://localhost:1313/tags/visualization/</link>
+    <description>Recent content in Visualization on João Martinho</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jan 2018 12:15:48 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Municipality Map of Portugal With Raphael.js</title>
+      <link>http://localhost:1313/posts/creating-municipality-map-portugal-raphael-js/</link>
+      <pubDate>Sat, 27 Jan 2018 12:15:48 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/creating-municipality-map-portugal-raphael-js/</guid>
+      
+      <description>Last year I found out about a rule in the Portuguese tax code that allows local councils to give back a small percentage of the taxes to be collected back to their residents. This was seen as a measure to incentivize people to move or stay in poorer regions, which probably suffer from a shortage of jobs and services. This was a common practice in medieval times, with incentives as big as a more lax treatment in possible crimes among them.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
